@@ -12,7 +12,7 @@
 - Cordova-iOS >=4.0
 
 ## 安装
-1. 命令行运行 ```cordova plugin add git@github.com:giantss/cordova-plugin-weibo.git --variable WEIBO_APP_ID=YOUR_WEIBO_APPID``` 
+1. 命令行运行 ```cordova plugin add https://github.com/giantss/cordova-plugin-weibo.git --variable WEIBO_APP_ID=YOUR_WEIBO_APPID``` 
 2. 在你的config.xml文件中添加 ```<preference name="REDIRECTURI" value="YOUR_WEIBO_REDIRECTURI" />``` 如果你不添加这个选项，那么默认的 redirecturi 是 https://api.weibo.com/oauth2/default.html               
 3. 命令行运行cordova build   					
 
@@ -67,7 +67,7 @@ YCWeibo.checkClientInstalled(function(){
 ```
 #效果图
 以下为运行效果图：
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" style="width:300px"></div>		
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" style="width:300px"></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" ></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/2.jpg?raw=true" alt="example" ></div>		
 
 
