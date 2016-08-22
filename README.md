@@ -1,11 +1,5 @@
 # Cordova 微博插件
-[![version](https://img.shields.io/badge/version-0.3.5-blue.svg?style=flat)](https://github.com/iVanPan/cordova_weibo)
-[![platform](https://img.shields.io/badge/platform-iOS%2FAndroid-lightgrey.svg?style=flat)](https://github.com/iVanPan/cordova_weibo)
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](https://github.com/iVanPan/cordova_weibo/blob/master/LICENSE)
-[![Contact](https://img.shields.io/badge/contact-Van-green.svg?style=flat)](http://VanPan.me)
-这是一个微博的Cordova插件. [English](https://github.com/iVanPan/cordova_weibo)    
-同时我还写了一个QQ的Cordova插件有兴趣的话可以查看[这里](https://github.com/iVanPan/Cordova_QQ)				
-如果有任何问题或是建议，请开issuss，也欢迎star或是fork。微博SDK部分如有涉及版权问题，版权归新浪微博所有
+
 ## 功能
 - 微博SSO 登录
 - 微博登出
@@ -18,7 +12,7 @@
 - Cordova-iOS >=4.0
 
 ## 安装
-1. 命令行运行 ```cordova plugin add https://github.com/iVanPan/cordova_weibo.git --variable WEIBO_APP_ID=YOUR_WEIBO_APPID```   或是    ```cordova plugin add cordova-plugin-weibosdk --variable WEIBO_APP_ID=YOUR_WEIBO_APPID```			
+1. 命令行运行 ```cordova plugin add git@github.com:giantss/cordova-plugin-weibo.git --variable WEIBO_APP_ID=YOUR_WEIBO_APPID``` 
 2. 在你的config.xml文件中添加 ```<preference name="REDIRECTURI" value="YOUR_WEIBO_REDIRECTURI" />``` 如果你不添加这个选项，那么默认的 redirecturi 是 https://api.weibo.com/oauth2/default.html               
 3. 命令行运行cordova build   					
 
@@ -73,7 +67,7 @@ YCWeibo.checkClientInstalled(function(){
 ```
 #效果图
 以下为运行效果图：
-<div style="text-align:center"><img src="https://github.com/iVanPan/cordova_weibo/blob/master/1.jpg?raw=true" alt="example" style="width:300px"></div>		
-<div style="text-align:center"><img src="https://github.com/iVanPan/cordova_weibo/blob/master/2.jpg?raw=true" alt="example" style="width:300px"></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" style="width:300px"></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" style="width:300px"></div>		
 
 
