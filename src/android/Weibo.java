@@ -107,11 +107,11 @@ public class Weibo extends CordovaPlugin {
      */
     private boolean ssoLogin(CallbackContext callbackContext) {
         currentCallbackContext = callbackContext;
-        AuthInfo mAuthInfo = new AuthInfo(YCWeibo.this.cordova.getActivity(),
+        AuthInfo mAuthInfo = new AuthInfo(Weibo.this.cordova.getActivity(),
                 APP_KEY, REDIRECT_URL, SCOPE);
-        mSsoHandler = new SsoHandler(YCWeibo.this.cordova.getActivity(),
+        mSsoHandler = new SsoHandler(Weibo.this.cordova.getActivity(),
                 mAuthInfo);
-        mAccessToken = AccessTokenKeeper.readAccessToken(YCWeibo.this.cordova
+        mAccessToken = AccessTokenKeeper.readAccessToken(Weibo.this.cordova
                 .getActivity());
         if (mAccessToken.isSessionValid()) {
             JSONObject jo = makeJson(mAccessToken.getToken(),
@@ -142,10 +142,10 @@ public class Weibo extends CordovaPlugin {
      * @return
      */
     private boolean checkClientInstalled(CallbackContext callbackContext) {
-        AuthInfo mAuthInfo = new AuthInfo(YCWeibo.this.cordova.getActivity(),
+        AuthInfo mAuthInfo = new AuthInfo(Weibo.this.cordova.getActivity(),
                 APP_KEY, REDIRECT_URL, SCOPE);
         if (mSsoHandler == null) {
-            mSsoHandler = new SsoHandler(YCWeibo.this.cordova.getActivity(),
+            mSsoHandler = new SsoHandler(Weibo.this.cordova.getActivity(),
                     mAuthInfo);
         }
         Boolean installed = mSsoHandler.isWeiboAppInstalled();
@@ -351,10 +351,10 @@ public class Weibo extends CordovaPlugin {
             mAccessToken = Oauth2AccessToken.parseAccessToken(values);
             if (mAccessToken.isSessionValid()) {
                 AccessTokenKeeper.writeAccessToken(
-                        YCWeibo.this.cordova.getActivity(), mAccessToken);
+                        Weibo.this.cordova.getActivity(), mAccessToken);
                 JSONObject jo = makeJson(mAccessToken.getToken(),
                         mAccessToken.getUid(),mAccessToken.getExpiresTime());
-                YCWeibo.this.webView.sendPluginResult(new PluginResult(
+                Weibo.this.webView.sendPluginResult(new PluginResult(
                         PluginResult.Status.OK, jo), currentCallbackContext.getCallbackId());
             } else {
                 // 以下几种情况，您会收到 Code：
@@ -362,7 +362,7 @@ public class Weibo extends CordovaPlugin {
                 // 2. 当您注册的应用程序包名与签名不正确时；
                 // 3. 当您在平台上注册的包名和签名与您当前测试的应用的包名和签名不匹配时。
                 // String code = values.getString("code");
-                YCWeibo.this.webView.sendPluginResult(new PluginResult(
+                Weibo.this.webView.sendPluginResult(new PluginResult(
                                 PluginResult.Status.ERROR, ONLY_GET_CODE),
                         currentCallbackContext.getCallbackId());
 
@@ -371,14 +371,14 @@ public class Weibo extends CordovaPlugin {
 
         @Override
         public void onCancel() {
-            YCWeibo.this.webView.sendPluginResult(new PluginResult(
+            Weibo.this.webView.sendPluginResult(new PluginResult(
                             PluginResult.Status.ERROR, CANCEL_BY_USER),
                     currentCallbackContext.getCallbackId());
         }
 
         @Override
         public void onWeiboException(WeiboException e) {
-            YCWeibo.this.webView.sendPluginResult(new PluginResult(
+            Weibo.this.webView.sendPluginResult(new PluginResult(
                             PluginResult.Status.ERROR, WEIBO_EXCEPTION),
                     currentCallbackContext.getCallbackId());
         }
