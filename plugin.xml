@@ -5,12 +5,12 @@
   id="cordova-plugin-weibosdk"
   version="0.3.5">
 
-  <name>YCWeibo</name>
+  <name>Weibo</name>
   <description>Cordova YCWeibo Plugin</description>
   <license>MIT</license>
   <keywords>cordova,weibo</keywords>
-  <repo>https://github.com/iVanPan/cordova_weibo.git</repo>
-  <issue>https://github.com/iVanPan/cordova_weibo/issues</issue>
+  <repo>git@github.com:giantss/cordova-plugin-weibo.git</repo>
+  <issue>git@github.com:giantss/cordova-plugin-weibo.git/issues</issue>
 
   <preference name="WEIBO_APP_ID" />
 

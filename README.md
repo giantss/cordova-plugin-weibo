@@ -13,7 +13,7 @@
 
 ## 安装
 1. 命令行运行 ```cordova plugin add https://github.com/giantss/cordova-plugin-weibo.git --variable WEIBO_APP_ID=YOUR_WEIBO_APPID``` 
-2. 在你的config.xml文件中添加 ```<preference name="REDIRECTURI" value="YOUR_WEIBO_REDIRECTURI" />``` 如果你不添加这个选项，那么默认的 redirecturi 是 https://api.weibo.com/oauth2/default.html               
+2. 在你的config.xml文件中添加 ```<preference name="REDIRECTURI" value="YOUR_WEIBO_REDIRECTURI" />``` 如果你不添加这个选项，那么默认的 redirecturi 是 https://api.weibo.com/oauth2/default.html(官方建议使用默认回调地址)               
 3. 命令行运行cordova build   					
 
 #注意事项
