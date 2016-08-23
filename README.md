@@ -65,9 +65,13 @@ YCWeibo.checkClientInstalled(function(){
 	console.log('client is not installed');
 });
 ```
-#效果图
-以下为运行效果图：
+#android效果图
+
 <div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/1.jpg?raw=true" alt="example" width="300px"></div>		
 <div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/2.jpg?raw=true" alt="example" width="300px"></div>		
 
+#ios效果图
+
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/3.png?raw=true" alt="example" width="300px"></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/4.png?raw=true" alt="example" width="300px"></div>	
 

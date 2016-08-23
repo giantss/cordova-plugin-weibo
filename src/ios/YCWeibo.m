@@ -71,6 +71,8 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
     WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
     authRequest.redirectURI = self.redirectURI;
     authRequest.scope = @"all";
+    
+    
     NSDictionary *params = [command.arguments objectAtIndex:0];
     if (!params) {
         CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
@@ -79,19 +81,37 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
     } else {
         // if([WeiboSDK isWeiboAppInstalled]){
         WBMessageObject *message = [WBMessageObject message];
-        WBWebpageObject *webpage = [WBWebpageObject object];
-        webpage.objectID = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
-        webpage.title = [params objectForKey:@"title"];
-        webpage.description = [NSString stringWithFormat:[params objectForKey:@"description"], [[NSDate date] timeIntervalSince1970]];
-        if (([params objectForKey:@"imageUrl"] && ![[params objectForKey:@"imageUrl"] isEqualToString:@""])) {
-            if ([[params objectForKey:@"imageUrl"] hasPrefix:@"http://"] || [[params objectForKey:@"imageUrl"] hasPrefix:@"https://"]) {
-                webpage.thumbnailData = [NSData dataWithContentsOfURL:
-                        [NSURL URLWithString:[params objectForKey:@"imageUrl"]]];
-            }
+        //WBWebpageObject *webpage = [WBWebpageObject object];
+        
+        //唤醒手机微博分享页面自动写入分享的文字
+        message.text = [[params objectForKey:@"title"]stringByAppendingString:[params objectForKey:@"imageUrl"]];
+        
+        //唤醒手机微博分享页面自动写入分享的图片
+           
+            WBImageObject *image = [WBImageObject object];
+            
+            image.imageData = [NSData dataWithContentsOfURL:
+                               [NSURL URLWithString:[params objectForKey:@"imageUrl"]]];
+            message.imageObject = image;
 
-        }
-        webpage.webpageUrl = [params objectForKey:@"url"];
-        message.mediaObject = webpage;
+        
+        
+
+        
+//        webpage.objectID = [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
+//        webpage.title = [params objectForKey:@"title"];
+//        webpage.description = [NSString stringWithFormat:[params objectForKey:@"description"], [[NSDate date] timeIntervalSince1970]];
+//        if (([params objectForKey:@"imageUrl"] && ![[params objectForKey:@"imageUrl"] isEqualToString:@""])) {
+//            if ([[params objectForKey:@"imageUrl"] hasPrefix:@"http://"] || [[params objectForKey:@"imageUrl"] hasPrefix:@"https://"]) {
+//                webpage.thumbnailData = [NSData dataWithContentsOfURL:
+//                        [NSURL URLWithString:[params objectForKey:@"imageUrl"]]];
+//            }
+//
+//        }
+//        webpage.webpageUrl = [params objectForKey:@"url"];
+//        message.mediaObject = webpage;
+        
+        
         NSUserDefaults *saveDefaults = [NSUserDefaults standardUserDefaults];
         NSString *token = [saveDefaults objectForKey:@"access_token"];
         WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token:token];
@@ -105,6 +125,7 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
         //}
     }
 }
+
 
 /**
  *  检查微博官方客户端是否安装
