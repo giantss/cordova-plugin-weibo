@@ -72,6 +72,6 @@ YCWeibo.checkClientInstalled(function(){
 
 #ios效果图
 
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/3.png?raw=true" alt="example" width="300px"></div>		
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/4.png?raw=true" alt="example" width="300px"></div>	
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/3.PNG?raw=true" alt="example" width="300px"></div>		
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/giantss/cordova-plugin-weibo/master/4.PNG?raw=true" alt="example" width="300px"></div>	
 
