@@ -2,7 +2,7 @@
 #import <Cordova/CDVPluginResult.h>
 #import "WeiboSDK.h"
 
-@interface YCWeibo : CDVPlugin <WeiboSDKDelegate>
+@interface Weibo : CDVPlugin <WeiboSDKDelegate>
 
 @property(nonatomic, copy) NSString *callback;
 @property(nonatomic, copy) NSString *redirectURI;

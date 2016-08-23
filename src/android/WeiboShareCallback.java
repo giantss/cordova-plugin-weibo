@@ -1,4 +1,4 @@
-package org.zy.yuancheng.weibo;
+package com.giants.weibo;
 
 
 import android.app.Activity;

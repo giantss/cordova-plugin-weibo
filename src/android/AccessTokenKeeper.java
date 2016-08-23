@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.zy.yuancheng.weibo;
+package com.giants.weibo;
 
 import android.content.Context;
 import android.content.SharedPreferences;

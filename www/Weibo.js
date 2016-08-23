@@ -4,10 +4,10 @@ cordova = require('cordova');
 
 module.exports = {
 	ssoLogin:function(successCallback, errorCallback){
-		exec(successCallback, errorCallback, "YCWeibo", "ssoLogin", []);
+		exec(successCallback, errorCallback, "Weibo", "ssoLogin", []);
 	},
 	logout:function(successCallback, errorCallback){
-		exec(successCallback, errorCallback, "YCWeibo", "logout", []);
+		exec(successCallback, errorCallback, "Weibo", "logout", []);
 	},
 	shareToWeibo:function(successCallback, errorCallback,args){
 		if(args == null || args == undefined){
@@ -28,10 +28,10 @@ module.exports = {
 		if(args.defaultText == null || args.defaultText == undefined){
 			args.defaultText = "";
 		}
-		exec(successCallback, errorCallback, "YCWeibo", "shareToWeibo", [args]);
+		exec(successCallback, errorCallback, "Weibo", "shareToWeibo", [args]);
 	},
 	checkClientInstalled:function(successCallback, errorCallback){
-		exec(successCallback, errorCallback, "YCWeibo", "checkClientInstalled", []);
+		exec(successCallback, errorCallback, "Weibo", "checkClientInstalled", []);
 	}
 
 };

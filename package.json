@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-weibosdk",
+  "name": "cordova-plugin-weibo",
   "version": "0.3.5",
   "description": "codrova/phonegap wrapper for weibo sdk",
   "main": "index.js",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iVanPan/cordova_weibo.git"
+    "url": "git+https://github.com/giantss/cordova-plugin-weibo.git"
   },
   "cordova": {
-    "id": "cordova-plugin-weibosdk",
+    "id": "cordova-plugin-weibo",
     "platforms": [
       "android",
       "ios"
@@ -30,10 +30,10 @@
     "login",
     "share"
   ],
-  "author": "https://github.com/iVanPan",
+  "author": "https://github.com/giantss",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iVanPan/cordova_weibo/issues"
+    "url": "https://github.com/giantss/cordova-plugin-weibo/issues"
   },
-  "homepage": "https://github.com/iVanPan/cordova_weibo"
+  "homepage": "https://github.com/giantss/cordova-plugin-weibo"
 }

@@ -1,4 +1,4 @@
-package org.zy.yuancheng.weibo;
+package com.giants.weibo;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -33,7 +33,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class YCWeibo extends CordovaPlugin {
+public class Weibo extends CordovaPlugin {
 
     private static final String SCOPE = "email,direct_messages_read,direct_messages_write,"
             + "friendships_groups_read,friendships_groups_write,statuses_to_me_read,"

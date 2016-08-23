@@ -6,11 +6,11 @@
   version="0.3.5">
 
   <name>Weibo</name>
-  <description>Cordova YCWeibo Plugin</description>
+  <description>Cordova Weibo Plugin</description>
   <license>MIT</license>
   <keywords>cordova,weibo</keywords>
-  <repo>git@github.com:giantss/cordova-plugin-weibo.git</repo>
-  <issue>git@github.com:giantss/cordova-plugin-weibo.git/issues</issue>
+  <repo>https://github.com/giantss/cordova-plugin-weibo.git</repo>
+  <issue>https://github.com/giantss/cordova-plugin-weibo.git/issues</issue>
 
   <preference name="WEIBO_APP_ID" />
 
@@ -22,15 +22,15 @@
   </engines>
 
   <!-- js module-->
-  <js-module src="www/ycweibo.js" name="ycweibo">
-    <clobbers target="YCWeibo" />
+  <js-module src="www/Weibo.js" name="Weibo">
+    <clobbers target="Weibo" />
   </js-module>
 
   <!-- ios -->
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-      <feature name="YCWeibo">
-       <param name="ios-package" value="YCWeibo"/>
+      <feature name="Weibo">
+       <param name="ios-package" value="Weibo"/>
      </feature>
      <access origin="https://open.weibo.cn/*" />
      <access origin="https://*.sina.cn/*" />
@@ -49,7 +49,7 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>$PACKAGE_NAME</string>
+        <string>weibo</string>
         <key>CFBundleURLSchemes</key>
         <array>
           <string>wb$WEIBO_APP_ID</string>
@@ -67,8 +67,8 @@
 		    <string>weibosdk2.5</string>
         </array>
     </config-file>
-  <header-file src="src/ios/YCWeibo.h"/>
-  <source-file src="src/ios/YCWeibo.m"/>
+  <header-file src="src/ios/Weibo.h"/>
+  <source-file src="src/ios/Weibo.m"/>
 
   <!-- Weibo sdk version 3.1.4 https://github.com/sinaweibosdk/weibo_ios_sdk -->
   <header-file src="src/ios/libWeiboSDK/WBHttpRequest.h" />
@@ -103,8 +103,8 @@
 <!-- android -->
 <platform name="android">
   <config-file target="res/xml/config.xml" parent="/*">
-    <feature name="YCWeibo" >
-      <param name="android-package" value="org.zy.yuancheng.weibo.YCWeibo"/>
+    <feature name="Weibo" >
+      <param name="android-package" value="com.giants.weibo.YCWeibo"/>
     </feature>
     <access origin="https://open.weibo.cn/*" />
     <access origin="https://login.sina.com.cn/*" />
@@ -145,7 +145,7 @@
     </activity>
     <!--android mianfest for weibo share callback -->
     <activity
-      android:name="org.zy.yuancheng.weibo.YCWeiboShareCallback"
+      android:name="com.giants.weibo.WeiboShareCallback"
       android:configChanges="keyboardHidden|orientation"
       android:screenOrientation="portrait" >
       <intent-filter>
@@ -158,9 +158,9 @@
       android:exported="false"></service>
     </config-file>
 
-    <source-file src="src/android/YCWeibo.java" target-dir="src/org/zy/yuancheng/weibo" />
-    <source-file src="src/android/YCWeiboShareCallback.java" target-dir="src/org/zy/yuancheng/weibo" />
-    <source-file src="src/android/AccessTokenKeeper.java" target-dir="src/org/zy/yuancheng/weibo" />
+    <source-file src="src/android/Weibo.java" target-dir="src/com/giants/weibo" />
+    <source-file src="src/android/WeiboShareCallback.java" target-dir="src/com/giants/weibo" />
+    <source-file src="src/android/AccessTokenKeeper.java" target-dir="src/com/giants/weibo" />
     <!-- android weibo sdk version 3.1.4  https://github.com/sinaweibosdk/weibo_android_sdk-->
    <source-file src="src/android/libs/armeabi/libweibosdkcore.so" target-dir="libs/armeabi/" />
     <source-file src="src/android/libs/armeabi-v7a/libweibosdkcore.so" target-dir="libs/armeabi-v7a/" />

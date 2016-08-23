@@ -1,4 +1,4 @@
-#import "YCWeibo.h"
+#import "Weibo.h"
 
 NSString *WEBIO_APP_ID = @"weibo_app_id";
 NSString *WEBIO_REDIRECT_URI = @"redirecturi";
@@ -11,7 +11,7 @@ NSString *WEIBO_AUTH_ERROR = @"Weibo auth error";
 NSString *WEIBO_UNKNOW_ERROR = @"Weibo unknow error";
 NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
 
-@implementation YCWeibo
+@implementation Weibo
 /**
  *  插件初始化主要用于appkey的注册
  */
@@ -36,7 +36,7 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
     WBAuthorizeRequest *request = [WBAuthorizeRequest request];
     request.redirectURI = self.redirectURI;
     request.scope = @"all";
-    request.userInfo = @{@"SSO_From" : @"YCWeibo",
+    request.userInfo = @{@"SSO_From" : @"Weibo",
             @"Other_Info_1" : [NSNumber numberWithInt:123],
             @"Other_Info_2" : @[@"obj1", @"obj2"],
             @"Other_Info_3" : @{@"key1" : @"obj1", @"key2" : @"obj2"}};
@@ -115,7 +115,7 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
         NSUserDefaults *saveDefaults = [NSUserDefaults standardUserDefaults];
         NSString *token = [saveDefaults objectForKey:@"access_token"];
         WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token:token];
-        request.userInfo = @{@"ShareMessageFrom" : @"YCWEIBO",
+        request.userInfo = @{@"ShareMessageFrom" : @"Weibo",
                 @"Other_Info_1" : [NSNumber numberWithInt:123],
                 @"Other_Info_2" : @[@"obj1", @"obj2"],
                 @"Other_Info_3" : @{@"key1" : @"obj1", @"key2" : @"obj2"}};
