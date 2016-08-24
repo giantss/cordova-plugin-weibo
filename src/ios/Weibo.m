@@ -84,7 +84,7 @@ NSString *WEIBO_USER_CANCEL_INSTALL = @"user cancel install weibo";
         //WBWebpageObject *webpage = [WBWebpageObject object];
         
         //唤醒手机微博分享页面自动写入分享的文字
-        message.text = [[params objectForKey:@"title"]stringByAppendingString:[params objectForKey:@"imageUrl"]];
+			message.text = [[[params objectForKey:@"title"]stringByAppendingString:@"（分享自 @CB自行车网 客户端）链接"] stringByAppendingString:[params objectForKey:@"imageUrl"]];
         
         //唤醒手机微博分享页面自动写入分享的图片
            
